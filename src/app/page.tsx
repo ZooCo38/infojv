@@ -76,7 +76,7 @@ export default function Home() {
               <div className="flex flex-col items-start pr-8">
                 <p className="text-6xl font-extrabold mb-1">20+</p>
                 <p className="text-xl font-extrabold">ans</p>
-                <p className="text-xl font-extrabold title-accent">d'expérience</p>
+                <p className="text-xl font-extrabold title-accent">d&apos;expérience</p>
               </div>
             </div>
             <div className="mt-auto flex justify-end">
@@ -205,7 +205,7 @@ export default function Home() {
             {/* Colonne droite: Texte + CTA */}
             <div className="flex-1 flex flex-col justify-between">
               <p className="leading-relaxed mb-4" style={{ fontSize: '1.3rem' }}>
-                Pour vous, je <span className="font-semibold">développe</span> l'application de vos rêves...
+                Pour vous, je <span className="font-semibold">développe</span> l&apos;application de vos rêves...
               </p>
               <button className="flex items-center gap-2 bg-black text-white px-4 py-2 font-semibold text-sm hover:bg-accent hover:text-black transition-colors self-start" style={{ borderRadius: '8px' }}>
                 <Icon name="chevron_right" className="text-base" />
