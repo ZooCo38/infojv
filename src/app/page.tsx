@@ -90,7 +90,7 @@ export default function Home() {
               <h2 className="font-bold">
                 <span className="text-white inline" style={{
                   fontSize: '1.25rem',
-                  lineHeight: '1.5',
+                  lineHeight: '1.3',
                   backgroundColor: '#000000',
                   borderRadius: '8px',
                   padding: '4px 10px',
@@ -168,7 +168,7 @@ export default function Home() {
             <h2 className="font-bold">
               <span className="text-white inline" style={{
                 fontSize: '1.25rem',
-                lineHeight: '1.5',
+                lineHeight: '1.3',
                 backgroundColor: '#000000',
                 borderRadius: '8px',
                 padding: '4px 10px',
