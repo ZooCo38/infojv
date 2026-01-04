@@ -25,7 +25,7 @@ export default function Home() {
             </p>
           </div>
           <nav className="space-y-3 mt-auto">
-            <a href="#accueil" className="flex items-center gap-3 text-sm font-medium text-white bg-black rounded-xl px-3 py-2 hover:bg-accent hover:text-black transition-colors">
+            <a href="#accueil" className="flex items-center gap-3 text-sm font-medium text-white bg-black rounded-md px-3 py-2 hover:bg-accent hover:text-black transition-colors">
               <Icon name="home" className="text-lg" />
               Accueil
             </a>
