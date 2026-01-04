@@ -113,9 +113,9 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 5: Photo Julien */}
-        <BentoCard gridArea="julien" variant="mint" className="relative overflow-visible p-0 z-0">
+        <BentoCard gridArea="julien" variant="mint" className="relative overflow-visible p-0">
           {/* Photo de Julien - débordant en haut jusqu'au milieu des cards projets/années */}
-          <div className="absolute inset-0 flex items-end justify-center z-0" style={{ top: '-50%' }}>
+          <div className="absolute inset-0 flex items-end justify-center z-10" style={{ top: '-50%' }}>
             <Image
               src="/assets/Julien-Villard.png"
               alt="Julien Villard"
