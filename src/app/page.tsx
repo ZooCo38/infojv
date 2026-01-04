@@ -13,18 +13,22 @@ export default function Home() {
       <BentoGrid className="bento-home">
         {/* Card 1: Info JV - Logo + Navigation */}
         <BentoCard gridArea="infojv" className="flex flex-col">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-4">
+          <div className="mb-4">
+            <h1 className="text-4xl font-black italic mb-4">
               <span className="text-black">INFO</span>
               <span className="text-accent">JV</span>
             </h1>
-            <p className="text-2xl font-bold leading-tight">
+            <p className="text-2xl font-extrabold leading-tight">
               Expert digital<br />
               <span className="title-accent">pour votre</span><br />
               Business
             </p>
           </div>
           <nav className="space-y-3 mt-auto">
+            <a href="#accueil" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+              <Icon name="home" className="text-lg" />
+              Accueil
+            </a>
             <a href="#expertise" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
               <Icon name="workspace_premium" className="text-lg" />
               <span className="title-highlight">Expertise</span>
