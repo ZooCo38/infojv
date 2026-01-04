@@ -10,6 +10,7 @@ interface FloatingShapeProps {
   className?: string;
   duration?: number;
   rotationEnabled?: boolean;
+  style?: React.CSSProperties;
 }
 
 export default function FloatingShape({
@@ -18,6 +19,7 @@ export default function FloatingShape({
   className = '',
   duration = 4,
   rotationEnabled = false,
+  style,
 }: FloatingShapeProps) {
   const floatingVariants = rotationEnabled
     ? {
@@ -43,7 +45,7 @@ export default function FloatingShape({
       };
 
   return (
-    <motion.div variants={floatingVariants} animate="animate" className={className}>
+    <motion.div variants={floatingVariants} animate="animate" className={className} style={style}>
       <Image src={src} alt={alt} width={150} height={150} className="w-full h-full object-contain" />
     </motion.div>
   );
