@@ -1,27 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background principal */
+  --bg-page: #0C0C0C;
+
+  /* Cards */
+  --bg-card: #FFF4F3;
+  --bg-card-white: #FFFFFF;
+  --bg-card-mint: #C9F9E3;
+
+  /* Accent */
+  --accent: #53E1A1;
+  --accent-dark: #3CB381;
+
+  /* Texte */
+  --text-primary: #000000;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --text-on-dark: #FFFFFF;
+
+  /* Borders */
+  --border-light: #E5E5E5;
+  --border-dark: #2A2A2A;
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  /* Bento Grid */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 16px;
+    padding: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Bento Card de base */
+  .bento-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Variantes de cards */
+  .bento-card--white {
+    background-color: var(--bg-card-white);
+  }
+
+  .bento-card--mint {
+    background: linear-gradient(135deg, #FFFFFF 0%, #C9F9E3 100%);
+  }
+
+  .bento-card--mint-reverse {
+    background: linear-gradient(135deg, #C9F9E3 0%, #FFFFFF 100%);
+  }
+
+  .bento-card--dark {
+    background-color: var(--bg-page);
+    color: var(--text-on-dark);
+  }
+
+  /* Boutons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--text-primary);
+    color: var(--text-on-dark);
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent);
+    color: var(--text-primary);
+  }
+
+  .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background-color: var(--text-primary);
+    color: var(--text-on-dark);
+    border-radius: var(--radius-lg);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-icon:hover {
+    background-color: var(--accent);
+    color: var(--text-primary);
+  }
+
+  /* Text utilities */
+  .title-accent {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .title-highlight {
+    background-color: var(--bg-card);
+    padding: 0.125em 0.5em;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+  }
+
+  .title-highlight-dark {
+    background-color: var(--text-primary);
+    color: var(--text-on-dark);
+    padding: 0.125em 0.5em;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+  }
+
+  .title-highlight-mint {
+    background-color: var(--accent);
+    color: var(--text-primary);
+    padding: 0.125em 0.5em;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
   }
 }

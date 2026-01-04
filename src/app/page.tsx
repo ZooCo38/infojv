@@ -1,101 +1,240 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import BentoGrid from '@/components/ui/BentoGrid';
+import BentoCard from '@/components/ui/BentoCard';
+import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icon';
+import FloatingShape from '@/components/ui/FloatingShape';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="min-h-screen py-8">
+      <BentoGrid className="bento-home">
+        {/* Card 1: Info JV - Logo + Navigation */}
+        <BentoCard gridArea="infojv" className="flex flex-col justify-between">
+          <div>
+            <h1 className="text-4xl font-bold mb-4">
+              <span className="text-black">INFO</span>
+              <span className="text-accent">JV</span>
+            </h1>
+            <p className="text-2xl font-bold leading-tight mb-6">
+              Expert digital<br />
+              <span className="title-accent">pour votre</span><br />
+              Business
+            </p>
+          </div>
+          <nav className="space-y-3">
+            <a href="#expertise" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+              <Icon name="workspace_premium" className="text-lg" />
+              <span className="title-highlight">Expertise</span>
+            </a>
+            <a href="#mobile" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+              <Icon name="smartphone" className="text-lg" />
+              Mobile
+            </a>
+            <a href="#projets" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+              <Icon name="rocket_launch" className="text-lg" />
+              Projets
+            </a>
+            <a href="#ia" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+              <Icon name="auto_awesome" className="text-lg" />
+              IA
+            </a>
+            <a href="#contact" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+              <Icon name="mail" className="text-lg" />
+              Contact
+            </a>
+          </nav>
+        </BentoCard>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        {/* Card 2: 50+ Projets */}
+        <BentoCard gridArea="projets">
+          <div className="flex flex-col items-start">
+            <p className="text-6xl font-bold mb-1">50+</p>
+            <p className="text-xl font-bold">Projets</p>
+            <p className="text-xl font-bold title-accent">livrés</p>
+            <p className="text-xl font-bold title-accent">en 2025 !</p>
+          </div>
+        </BentoCard>
+
+        {/* Card 3: 20+ ans */}
+        <BentoCard gridArea="annees" variant="mint">
+          <div className="flex flex-col items-start">
+            <p className="text-6xl font-bold mb-1">20+</p>
+            <p className="text-xl font-bold">ans</p>
+            <p className="text-xl font-bold title-accent">d'expérience</p>
+          </div>
+        </BentoCard>
+
+        {/* Card 4: Sites web professionnel */}
+        <BentoCard gridArea="siteweb" className="flex flex-col justify-between">
+          <div>
+            <h2 className="text-2xl font-bold mb-1">
+              <span className="title-highlight-dark">Site web</span>
+            </h2>
+            <p className="text-2xl font-bold mb-6">professionnel</p>
+          </div>
+          <div className="space-y-2 mb-6">
+            <div className="flex items-center gap-2 text-sm">
+              <Icon name="storefront" className="text-base" />
+              Sites vitrine
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <Icon name="shopping_cart" className="text-base" />
+              Sites e-commerce
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <Icon name="favorite" className="text-base" />
+              Sites de mariage
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <Icon name="groups" className="text-base" />
+              Sites association
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <Icon name="photo_camera" className="text-base" />
+              Sites photos
+            </div>
+          </div>
+          <Button icon="chevron_right">découvrir</Button>
+        </BentoCard>
+
+        {/* Card 5: Photo Julien */}
+        <BentoCard gridArea="julien" variant="mint" className="relative overflow-visible">
+          {/* Shapes 3D flottantes */}
+          <FloatingShape
+            src="/assets/shape_3D/RoundCube-Black-Matte.png"
+            className="absolute top-4 right-4 w-16 h-16 opacity-80"
+            duration={5}
+          />
+          <FloatingShape
+            src="/assets/shape_3D/Cylinder-Black-Matte.png"
+            className="absolute top-16 left-8 w-12 h-24 opacity-70"
+            duration={4.5}
+          />
+          <FloatingShape
+            src="/assets/shape_3D/Pill-Black-Matte.png"
+            className="absolute bottom-20 right-12 w-24 h-12 opacity-60"
+            duration={4}
+            rotationEnabled
+          />
+
+          {/* Photo de Julien */}
+          <div className="relative h-full flex items-end justify-center">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/assets/Julien-Villard.png"
+              alt="Julien Villard"
+              width={600}
+              height={750}
+              className="object-contain object-bottom h-full"
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          </div>
+        </BentoCard>
+
+        {/* Card 6: Développement Mobile */}
+        <BentoCard gridArea="mobile" className="flex flex-col justify-between">
+          <div>
+            <h2 className="text-xl font-bold mb-4">
+              <span className="title-highlight-mint">Développement Mobile</span>
+            </h2>
+            <div className="mb-4 rounded-lg overflow-hidden">
+              <Image
+                src="/assets/mobile.png"
+                alt="Application mobile"
+                width={300}
+                height={200}
+                className="w-full object-cover"
+              />
+            </div>
+            <p className="text-sm leading-relaxed mb-4">
+              Pour vous, je <span className="font-semibold">développe</span> l'application de vos rêves...
+            </p>
+          </div>
+          <Button icon="chevron_right">découvrir</Button>
+        </BentoCard>
+
+        {/* Card 7: Spécialiste Banque */}
+        <BentoCard gridArea="banques">
+          <h3 className="text-sm font-semibold mb-2">Spécialiste digital</h3>
+          <p className="text-lg font-bold mb-2">
+            <span className="text-accent">Banque</span> et <span className="text-accent">Assurance</span>
+          </p>
+          <p className="text-xs text-text-secondary mb-4">ils me font confiance...</p>
+          <div className="flex gap-4 items-center">
+            {/* Logos bancaires - À remplacer par les vrais logos */}
+            <div className="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center text-xs font-bold">CE</div>
+            <div className="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center text-xs font-bold">BNP</div>
+            <div className="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center text-xs font-bold">LBP</div>
+          </div>
+        </BentoCard>
+
+        {/* Card 8: Localisation Marseille */}
+        <BentoCard gridArea="marseille" variant="mint-reverse">
+          <div className="flex items-start gap-2 mb-4">
+            <Icon name="location_on" className="text-xl text-accent" />
+            <p className="text-xs">
+              Préférez un développement local proche de vous ou chez vous !
+            </p>
+          </div>
+          <h3 className="text-3xl font-bold mb-1">MARSEILLE (13)</h3>
+          <p className="text-sm">Peypin, Aix-en-Provence</p>
+          <p className="text-sm">Remote France</p>
+        </BentoCard>
+
+        {/* Card 9: Projet/Contact */}
+        <BentoCard gridArea="contact" variant="mint-reverse" className="flex items-center justify-between">
+          <div>
+            <h2 className="text-3xl font-bold mb-2">
+              Un projet en <span className="title-highlight">tête ?</span>
+            </h2>
+            <p className="text-sm">discutons de vos besoins.</p>
+          </div>
+          <div className="flex gap-4">
+            <Button variant="icon" icon="mail" />
+            <Button variant="icon" icon="call" />
+          </div>
+        </BentoCard>
+      </BentoGrid>
+
+      <style jsx global>{`
+        .bento-home {
+          grid-template-areas:
+            "infojv   projets   annees    siteweb"
+            "infojv   julien    julien    siteweb"
+            "mobile   julien    julien    banques"
+            "mobile   marseille contact   contact";
+        }
+
+        @media (max-width: 1024px) {
+          .bento-home {
+            grid-template-areas:
+              "infojv infojv"
+              "projets annees"
+              "siteweb siteweb"
+              "julien julien"
+              "mobile mobile"
+              "banques marseille"
+              "contact contact";
+          }
+        }
+
+        @media (max-width: 640px) {
+          .bento-home {
+            grid-template-areas:
+              "infojv"
+              "projets"
+              "annees"
+              "siteweb"
+              "julien"
+              "mobile"
+              "banques"
+              "marseille"
+              "contact";
+          }
+        }
+      `}</style>
+    </main>
   );
 }
