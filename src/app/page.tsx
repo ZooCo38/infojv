@@ -162,7 +162,7 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 6: Développement Mobile */}
-        <BentoCard gridArea="mobile" className="flex flex-col">
+        <BentoCard gridArea="mobile" className="flex flex-col justify-center">
           {/* Titre avec fond noir sur 2 lignes */}
           <div className="mb-4" style={{ maxWidth: '200px' }}>
             <h2 className="font-bold">
@@ -181,7 +181,7 @@ export default function Home() {
           </div>
 
           {/* Layout 2 colonnes */}
-          <div className="flex gap-4 items-start flex-1">
+          <div className="flex gap-4 items-center">
             {/* Colonne gauche: Visuel */}
             <div className="flex-shrink-0 w-32">
               <Image
