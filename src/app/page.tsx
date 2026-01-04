@@ -151,26 +151,37 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 6: Développement Mobile */}
-        <BentoCard gridArea="mobile" className="flex flex-col justify-between">
-          <div>
-            <div className="inline-block bg-black rounded-xl px-3 py-1 mb-4">
-              <h2 className="text-base font-bold text-white">Développement Mobile</h2>
-            </div>
-            <div className="mb-4 rounded-lg overflow-hidden">
+        <BentoCard gridArea="mobile" className="flex flex-col">
+          {/* Titre avec fond noir */}
+          <div className="inline-block bg-black px-4 py-2 mb-4" style={{ borderRadius: '8px' }}>
+            <h2 className="text-lg font-bold text-white">Développement Mobile</h2>
+          </div>
+
+          {/* Layout 2 colonnes */}
+          <div className="flex gap-4 items-start flex-1">
+            {/* Colonne gauche: Visuel */}
+            <div className="flex-shrink-0 w-32">
               <Image
                 src="/assets/mobile.png"
                 alt="Application mobile"
-                width={300}
-                height={200}
-                className="w-full object-cover"
+                width={200}
+                height={300}
+                className="w-full h-auto rounded-full object-cover"
                 quality={100}
               />
             </div>
-            <p className="text-sm leading-relaxed mb-4">
-              Pour vous, je <span className="font-semibold">développe</span> l'application de vos rêves...
-            </p>
+
+            {/* Colonne droite: Texte + CTA */}
+            <div className="flex-1 flex flex-col justify-between">
+              <p className="text-sm leading-relaxed mb-4">
+                Pour vous, je <span className="font-semibold">développe</span> l'application de vos rêves...
+              </p>
+              <button className="flex items-center gap-2 bg-black text-white px-4 py-2 font-semibold text-sm hover:bg-accent hover:text-black transition-colors self-start" style={{ borderRadius: '8px' }}>
+                <Icon name="chevron_right" className="text-base" />
+                découvrir
+              </button>
+            </div>
           </div>
-          <Button icon="chevron_right">découvrir</Button>
         </BentoCard>
 
         {/* Card 7: Spécialiste Banque */}
