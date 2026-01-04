@@ -27,8 +27,8 @@ export default function FloatingShape({
           y: [0, -10, 0],
           rotate: [0, 180, 360],
           transition: {
-            y: { duration: duration, repeat: Infinity, ease: 'easeInOut' },
-            rotate: { duration: duration * 2, repeat: Infinity, ease: 'linear' },
+            y: { duration: duration, repeat: Infinity as number, ease: 'easeInOut' as const },
+            rotate: { duration: duration * 2, repeat: Infinity as number, ease: 'linear' as const },
           },
         },
       }
@@ -38,8 +38,8 @@ export default function FloatingShape({
           rotate: [0, 5, 0],
           transition: {
             duration: duration,
-            repeat: Infinity,
-            ease: 'easeInOut',
+            repeat: Infinity as number,
+            ease: 'easeInOut' as const,
           },
         },
       };
