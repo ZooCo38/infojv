@@ -49,8 +49,8 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 2: 50+ Projets */}
-        <BentoCard gridArea="projets" className="relative">
-          <div className="flex flex-col items-start">
+        <BentoCard gridArea="projets" className="relative overflow-visible">
+          <div className="flex flex-col items-start relative z-10">
             <p className="text-6xl font-bold mb-1">50+</p>
             <p className="text-xl font-bold">Projets</p>
             <p className="text-xl font-bold title-accent">livrés</p>
@@ -59,14 +59,14 @@ export default function Home() {
           {/* Shape 3D flottante */}
           <FloatingShape
             src="/assets/shape_3D/SuperToroid-Black-Matte.png"
-            className="absolute top-2 right-2 w-16 h-16 opacity-70"
+            className="absolute top-2 right-2 w-16 h-16"
             duration={4.5}
           />
         </BentoCard>
 
         {/* Card 3: 20+ ans */}
-        <BentoCard gridArea="annees" variant="white" className="relative">
-          <div className="flex flex-col items-start">
+        <BentoCard gridArea="annees" variant="white" className="relative overflow-visible">
+          <div className="flex flex-col items-start relative z-10">
             <p className="text-6xl font-bold mb-1">20+</p>
             <p className="text-xl font-bold">ans</p>
             <p className="text-xl font-bold title-accent">d'expérience</p>
@@ -74,7 +74,7 @@ export default function Home() {
           {/* Shape 3D flottante */}
           <FloatingShape
             src="/assets/shape_3D/Cone.png"
-            className="absolute top-2 right-2 w-16 h-16 opacity-60"
+            className="absolute top-2 right-2 w-16 h-16"
             duration={5}
           />
         </BentoCard>
@@ -113,37 +113,37 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 5: Photo Julien */}
-        <BentoCard gridArea="julien" variant="mint" className="relative overflow-visible p-0">
-          {/* Shapes 3D flottantes */}
-          <FloatingShape
-            src="/assets/shape_3D/RoundCube-Black-Matte.png"
-            className="absolute -top-8 right-8 w-20 h-20 opacity-80 z-10"
-            duration={5}
-          />
-          <FloatingShape
-            src="/assets/shape_3D/Cylinder-Black-Matte.png"
-            className="absolute top-20 left-8 w-12 h-24 opacity-70 z-10"
-            duration={4.5}
-          />
-          <FloatingShape
-            src="/assets/shape_3D/Pill-Black-Matte.png"
-            className="absolute bottom-28 right-12 w-24 h-12 opacity-60 z-10"
-            duration={4}
-            rotationEnabled
-          />
-
-          {/* Photo de Julien - ferrée en bas, débordant en haut */}
-          <div className="relative h-full flex items-end justify-center">
+        <BentoCard gridArea="julien" variant="mint" className="relative overflow-visible p-0 z-0">
+          {/* Photo de Julien - débordant en haut jusqu'au milieu des cards projets/années */}
+          <div className="absolute inset-0 flex items-end justify-center z-0" style={{ top: '-50%' }}>
             <Image
               src="/assets/Julien-Villard.png"
               alt="Julien Villard"
               width={600}
-              height={800}
-              className="object-contain object-bottom w-auto"
-              style={{ height: '115%', marginBottom: '-24px' }}
+              height={900}
+              className="object-contain object-bottom w-auto h-full"
               priority
+              quality={100}
             />
           </div>
+
+          {/* Shapes 3D flottantes */}
+          <FloatingShape
+            src="/assets/shape_3D/RoundCube-Black-Matte.png"
+            className="absolute -top-16 right-8 w-20 h-20 z-20"
+            duration={5}
+          />
+          <FloatingShape
+            src="/assets/shape_3D/Cylinder-Black-Matte.png"
+            className="absolute top-20 left-8 w-12 h-24 z-20"
+            duration={4.5}
+          />
+          <FloatingShape
+            src="/assets/shape_3D/Pill-Black-Matte.png"
+            className="absolute bottom-28 right-12 w-24 h-12 z-20"
+            duration={4}
+            rotationEnabled
+          />
         </BentoCard>
 
         {/* Card 6: Développement Mobile */}
@@ -159,6 +159,7 @@ export default function Home() {
                 width={300}
                 height={200}
                 className="w-full object-cover"
+                quality={100}
               />
             </div>
             <p className="text-sm leading-relaxed mb-4">
