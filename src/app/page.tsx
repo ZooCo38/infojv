@@ -86,18 +86,21 @@ export default function Home() {
         {/* Card 4: Sites web professionnel */}
         <BentoCard gridArea="siteweb" className="flex flex-col justify-between">
           <div>
-            <h2 className="font-bold text-white inline-block mb-6" style={{
-              fontSize: '1.25rem',
-              lineHeight: '1.5',
-              backgroundColor: '#000000',
-              borderRadius: '8px',
-              padding: '4px 10px',
-              boxDecorationBreak: 'clone',
-              WebkitBoxDecorationBreak: 'clone',
-              maxWidth: '200px'
-            }}>
-              Site web professionnel
-            </h2>
+            <div className="mb-6" style={{ maxWidth: '200px' }}>
+              <h2 className="font-bold">
+                <span className="text-white inline" style={{
+                  fontSize: '1.25rem',
+                  lineHeight: '1.5',
+                  backgroundColor: '#000000',
+                  borderRadius: '8px',
+                  padding: '4px 10px',
+                  boxDecorationBreak: 'clone',
+                  WebkitBoxDecorationBreak: 'clone'
+                }}>
+                  Site web professionnel
+                </span>
+              </h2>
+            </div>
           </div>
           <div className="space-y-2 mb-6">
             <div className="flex items-center gap-2 text-sm">
@@ -161,18 +164,19 @@ export default function Home() {
         {/* Card 6: Développement Mobile */}
         <BentoCard gridArea="mobile" className="flex flex-col">
           {/* Titre avec fond noir sur 2 lignes */}
-          <div className="mb-4">
-            <h2 className="font-bold text-white inline-block" style={{
-              fontSize: '1.25rem',
-              lineHeight: '1.5',
-              backgroundColor: '#000000',
-              borderRadius: '8px',
-              padding: '4px 10px',
-              boxDecorationBreak: 'clone',
-              WebkitBoxDecorationBreak: 'clone',
-              maxWidth: '200px'
-            }}>
-              Développement Mobile
+          <div className="mb-4" style={{ maxWidth: '200px' }}>
+            <h2 className="font-bold">
+              <span className="text-white inline" style={{
+                fontSize: '1.25rem',
+                lineHeight: '1.5',
+                backgroundColor: '#000000',
+                borderRadius: '8px',
+                padding: '4px 10px',
+                boxDecorationBreak: 'clone',
+                WebkitBoxDecorationBreak: 'clone'
+              }}>
+                Développement Mobile
+              </span>
             </h2>
           </div>
 
