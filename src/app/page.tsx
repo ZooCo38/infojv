@@ -25,13 +25,13 @@ export default function Home() {
             </p>
           </div>
           <nav className="space-y-3 mt-auto">
-            <a href="#accueil" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+            <a href="#accueil" className="flex items-center gap-3 text-sm font-medium text-white bg-black rounded-lg px-3 py-2 hover:bg-accent hover:text-black transition-colors">
               <Icon name="home" className="text-lg" />
               Accueil
             </a>
             <a href="#expertise" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
               <Icon name="workspace_premium" className="text-lg" />
-              <span className="title-highlight">Expertise</span>
+              Expertise
             </a>
             <a href="#mobile" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
               <Icon name="smartphone" className="text-lg" />
