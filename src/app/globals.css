@@ -41,6 +41,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg-page);
@@ -54,10 +59,11 @@ body {
   .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(4, 1fr);
     gap: 16px;
     padding: 16px;
     max-width: 1400px;
+    height: 100vh;
     margin: 0 auto;
   }
 

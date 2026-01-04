@@ -9,22 +9,22 @@ import FloatingShape from '@/components/ui/FloatingShape';
 
 export default function Home() {
   return (
-    <main className="min-h-screen py-8">
+    <main className="h-screen overflow-hidden">
       <BentoGrid className="bento-home">
         {/* Card 1: Info JV - Logo + Navigation */}
-        <BentoCard gridArea="infojv" className="flex flex-col justify-between">
-          <div>
+        <BentoCard gridArea="infojv" className="flex flex-col">
+          <div className="mb-8">
             <h1 className="text-4xl font-bold mb-4">
               <span className="text-black">INFO</span>
               <span className="text-accent">JV</span>
             </h1>
-            <p className="text-2xl font-bold leading-tight mb-6">
+            <p className="text-2xl font-bold leading-tight">
               Expert digital<br />
               <span className="title-accent">pour votre</span><br />
               Business
             </p>
           </div>
-          <nav className="space-y-3">
+          <nav className="space-y-3 mt-auto">
             <a href="#expertise" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
               <Icon name="workspace_premium" className="text-lg" />
               <span className="title-highlight">Expertise</span>
@@ -49,31 +49,43 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 2: 50+ Projets */}
-        <BentoCard gridArea="projets">
+        <BentoCard gridArea="projets" className="relative">
           <div className="flex flex-col items-start">
             <p className="text-6xl font-bold mb-1">50+</p>
             <p className="text-xl font-bold">Projets</p>
             <p className="text-xl font-bold title-accent">livrés</p>
             <p className="text-xl font-bold title-accent">en 2025 !</p>
           </div>
+          {/* Shape 3D flottante */}
+          <FloatingShape
+            src="/assets/shape_3D/SuperToroid-Black-Matte.png"
+            className="absolute top-2 right-2 w-16 h-16 opacity-70"
+            duration={4.5}
+          />
         </BentoCard>
 
         {/* Card 3: 20+ ans */}
-        <BentoCard gridArea="annees" variant="mint">
+        <BentoCard gridArea="annees" variant="white" className="relative">
           <div className="flex flex-col items-start">
             <p className="text-6xl font-bold mb-1">20+</p>
             <p className="text-xl font-bold">ans</p>
             <p className="text-xl font-bold title-accent">d'expérience</p>
           </div>
+          {/* Shape 3D flottante */}
+          <FloatingShape
+            src="/assets/shape_3D/Cone.png"
+            className="absolute top-2 right-2 w-16 h-16 opacity-60"
+            duration={5}
+          />
         </BentoCard>
 
         {/* Card 4: Sites web professionnel */}
         <BentoCard gridArea="siteweb" className="flex flex-col justify-between">
           <div>
-            <h2 className="text-2xl font-bold mb-1">
-              <span className="title-highlight-dark">Site web</span>
-            </h2>
-            <p className="text-2xl font-bold mb-6">professionnel</p>
+            <div className="inline-block bg-black rounded-xl px-3 py-1 mb-2">
+              <h2 className="text-xl font-bold text-white">Site web</h2>
+            </div>
+            <p className="text-xl font-bold mb-6">professionnel</p>
           </div>
           <div className="space-y-2 mb-6">
             <div className="flex items-center gap-2 text-sm">
@@ -101,33 +113,34 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 5: Photo Julien */}
-        <BentoCard gridArea="julien" variant="mint" className="relative overflow-visible">
+        <BentoCard gridArea="julien" variant="mint" className="relative overflow-visible p-0">
           {/* Shapes 3D flottantes */}
           <FloatingShape
             src="/assets/shape_3D/RoundCube-Black-Matte.png"
-            className="absolute top-4 right-4 w-16 h-16 opacity-80"
+            className="absolute -top-8 right-8 w-20 h-20 opacity-80 z-10"
             duration={5}
           />
           <FloatingShape
             src="/assets/shape_3D/Cylinder-Black-Matte.png"
-            className="absolute top-16 left-8 w-12 h-24 opacity-70"
+            className="absolute top-20 left-8 w-12 h-24 opacity-70 z-10"
             duration={4.5}
           />
           <FloatingShape
             src="/assets/shape_3D/Pill-Black-Matte.png"
-            className="absolute bottom-20 right-12 w-24 h-12 opacity-60"
+            className="absolute bottom-28 right-12 w-24 h-12 opacity-60 z-10"
             duration={4}
             rotationEnabled
           />
 
-          {/* Photo de Julien */}
+          {/* Photo de Julien - ferrée en bas, débordant en haut */}
           <div className="relative h-full flex items-end justify-center">
             <Image
               src="/assets/Julien-Villard.png"
               alt="Julien Villard"
               width={600}
-              height={750}
-              className="object-contain object-bottom h-full"
+              height={800}
+              className="object-contain object-bottom w-auto"
+              style={{ height: '115%', marginBottom: '-24px' }}
               priority
             />
           </div>
@@ -136,9 +149,9 @@ export default function Home() {
         {/* Card 6: Développement Mobile */}
         <BentoCard gridArea="mobile" className="flex flex-col justify-between">
           <div>
-            <h2 className="text-xl font-bold mb-4">
-              <span className="title-highlight-mint">Développement Mobile</span>
-            </h2>
+            <div className="inline-block bg-black rounded-xl px-3 py-1 mb-4">
+              <h2 className="text-base font-bold text-white">Développement Mobile</h2>
+            </div>
             <div className="mb-4 rounded-lg overflow-hidden">
               <Image
                 src="/assets/mobile.png"
