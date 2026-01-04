@@ -86,10 +86,18 @@ export default function Home() {
         {/* Card 4: Sites web professionnel */}
         <BentoCard gridArea="siteweb" className="flex flex-col justify-between">
           <div>
-            <div className="inline-block bg-black rounded-xl px-3 py-1 mb-2">
-              <h2 className="text-xl font-bold text-white">Site web</h2>
-            </div>
-            <p className="text-xl font-bold mb-6">professionnel</p>
+            <h2 className="font-bold text-white inline-block mb-6" style={{
+              fontSize: '1.25rem',
+              lineHeight: '1.5',
+              backgroundColor: '#000000',
+              borderRadius: '8px',
+              padding: '4px 10px',
+              boxDecorationBreak: 'clone',
+              WebkitBoxDecorationBreak: 'clone',
+              maxWidth: '200px'
+            }}>
+              Site web professionnel
+            </h2>
           </div>
           <div className="space-y-2 mb-6">
             <div className="flex items-center gap-2 text-sm">
@@ -152,9 +160,20 @@ export default function Home() {
 
         {/* Card 6: Développement Mobile */}
         <BentoCard gridArea="mobile" className="flex flex-col">
-          {/* Titre avec fond noir */}
-          <div className="inline-block bg-black px-4 py-2 mb-4" style={{ borderRadius: '8px' }}>
-            <h2 className="text-lg font-bold text-white">Développement Mobile</h2>
+          {/* Titre avec fond noir sur 2 lignes */}
+          <div className="mb-4">
+            <h2 className="font-bold text-white inline-block" style={{
+              fontSize: '1.25rem',
+              lineHeight: '1.5',
+              backgroundColor: '#000000',
+              borderRadius: '8px',
+              padding: '4px 10px',
+              boxDecorationBreak: 'clone',
+              WebkitBoxDecorationBreak: 'clone',
+              maxWidth: '200px'
+            }}>
+              Développement Mobile
+            </h2>
           </div>
 
           {/* Layout 2 colonnes */}
@@ -173,7 +192,7 @@ export default function Home() {
 
             {/* Colonne droite: Texte + CTA */}
             <div className="flex-1 flex flex-col justify-between">
-              <p className="text-sm leading-relaxed mb-4">
+              <p className="leading-relaxed mb-4" style={{ fontSize: '1.3rem' }}>
                 Pour vous, je <span className="font-semibold">développe</span> l'application de vos rêves...
               </p>
               <button className="flex items-center gap-2 bg-black text-white px-4 py-2 font-semibold text-sm hover:bg-accent hover:text-black transition-colors self-start" style={{ borderRadius: '8px' }}>
