@@ -46,6 +46,14 @@ html, body {
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  html, body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+  }
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg-page);
@@ -65,6 +73,26 @@ body {
     max-width: 1400px;
     height: 100vh;
     margin: 0 auto;
+  }
+
+  @media (max-width: 1024px) {
+    .bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      height: auto;
+      min-height: 100vh;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bento-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      height: auto;
+      min-height: 100vh;
+      gap: 12px;
+      padding: 12px;
+    }
   }
 
   /* Bento Card de base */
@@ -113,7 +141,7 @@ body {
     background-color: var(--text-primary);
     color: var(--text-on-dark);
     padding: 12px 24px;
-    border-radius: var(--radius-full);
+    border-radius: 8px;
     font-weight: 600;
     font-size: 0.875rem;
     transition: all 0.2s ease;
