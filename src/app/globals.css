@@ -209,6 +209,60 @@ body {
   }
 }
 
+/* Card number (01, 02, 03, 04) */
+.card-number {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Card tagline - style tricolon */
+.card-tagline {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #000;
+  margin: 0.75rem 0;
+}
+
+.card-tagline em {
+  color: #53E1A1;
+  font-style: italic;
+}
+
+/* Card tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.card-tags span {
+  font-size: 0.7rem;
+  color: #666;
+  background: rgba(0,0,0,0.05);
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+/* Card link */
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #000;
+  margin-top: 1rem;
+  transition: color 0.2s;
+}
+
+.card-link:hover {
+  color: #53E1A1;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .bento-grid {
