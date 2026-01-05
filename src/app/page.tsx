@@ -76,13 +76,13 @@ export default function Home() {
               <div className="flex flex-col items-start pr-8">
                 <p className="text-6xl font-extrabold mb-1">20+</p>
                 <p className="text-xl font-extrabold">ans</p>
-                <p className="text-xl font-extrabold title-accent">d&apos;expérience</p>
+                <p className="text-xl font-extrabold title-accent">d'expérience</p>
               </div>
             </div>
             <div className="mt-auto flex justify-end">
               <FloatingShape
                 src="/assets/shape_3D/Pill-Black-Matte.png"
-                className="w-48 h-24"
+                className="w-64 h-32"
                 duration={5}
               />
             </div>
@@ -161,12 +161,6 @@ export default function Home() {
               quality={100}
             />
           </div>
-          <FloatingShape
-            src="/assets/shape_3D/Cone.png"
-            className="absolute left-8 w-28 h-28 z-20 hidden md:block"
-            style={{ top: '96px' }}
-            duration={5}
-          />
         </BentoCard>
 
         {/* Card 6: Développement Mobile */}
@@ -205,7 +199,7 @@ export default function Home() {
             {/* Colonne droite: Texte + CTA */}
             <div className="flex-1 flex flex-col justify-between">
               <p className="leading-relaxed mb-4" style={{ fontSize: '1.3rem' }}>
-                Pour vous, je <span className="font-semibold">développe</span> l&apos;application de vos rêves...
+                Pour vous, je <span className="font-semibold">développe</span> l'application de vos rêves...
               </p>
               <button className="flex items-center gap-2 bg-black text-white px-4 py-2 font-semibold text-sm hover:bg-accent hover:text-black transition-colors self-start" style={{ borderRadius: '8px' }}>
                 <Icon name="chevron_right" className="text-base" />
@@ -223,7 +217,7 @@ export default function Home() {
           </p>
           <p className="text-xs mb-4">ils me font confiance...</p>
           <div className="flex gap-3 items-center">
-            <div className="w-16 h-16 bg-white flex items-center justify-center p-3 rounded-lg">
+            <div className="w-16 h-16 bg-black flex items-center justify-center p-3 rounded-lg">
               <Image
                 src="/assets/logos-banque/epargne.png"
                 alt="Caisse d'Épargne"
@@ -232,7 +226,7 @@ export default function Home() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="w-16 h-16 bg-white flex items-center justify-center p-3 rounded-lg">
+            <div className="w-16 h-16 bg-black flex items-center justify-center p-3 rounded-lg">
               <Image
                 src="/assets/logos-banque/bnp.svg"
                 alt="BNP Paribas"
@@ -241,7 +235,7 @@ export default function Home() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="w-16 h-16 bg-white flex items-center justify-center p-3 rounded-lg">
+            <div className="w-16 h-16 bg-black flex items-center justify-center p-3 rounded-lg">
               <Image
                 src="/assets/logos-banque/bp.svg"
                 alt="Banque Populaire"
