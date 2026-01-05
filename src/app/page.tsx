@@ -210,7 +210,7 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 7: Spécialiste Banque */}
-        <BentoCard gridArea="banques">
+        <BentoCard gridArea="banques" className="flex flex-col items-center justify-center">
           <h3 className="text-lg font-extrabold mb-1 text-black">Spécialiste digital</h3>
           <p className="text-lg font-extrabold mb-3 text-accent">
             Banque et Assurance
