@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ContactModalProvider } from "@/contexts/ContactModalContext";
+import ContactModal from "@/components/contact/ContactModal";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://infojv.net'),
@@ -39,7 +41,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        {children}
+        <ContactModalProvider>
+          {children}
+          <ContactModal />
+        </ContactModalProvider>
       </body>
     </html>
   );

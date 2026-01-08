@@ -1,0 +1,99 @@
+# generated: 2026-01-07
+# project: infojv
+# project_key: infojv
+# tracking_system: file-system
+# story_location: docs/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-01-07
+project: infojv
+project_key: infojv
+tracking_system: file-system
+story_location: docs/implementation-artifacts
+
+development_status:
+  # Epic 1: Contact System Foundation (P0 - Lead Generation)
+  epic-1: in-progress
+  1-1-create-contactmodalcontext: review
+  1-2-create-contact-form-ui-components: review
+  1-3-create-contact-modal-component: review
+  1-4-create-contact-api-route: review
+  epic-1-retrospective: optional
+
+  # Epic 2: Homepage Polish (P0 - First Impression)
+  epic-2: backlog
+  2-1-fix-homepage-16-9-ratio: backlog
+  2-2-fix-mobile-scroll-behavior: backlog
+  2-3-polish-homepage-key-numbers-card: backlog
+  2-4-polish-homepage-services-links: backlog
+  2-5-polish-homepage-bank-references-card: backlog
+  2-6-polish-homepage-location-card: backlog
+  2-7-polish-homepage-contact-cta-card: backlog
+  epic-2-retrospective: optional
+
+  # Epic 3: Expertise Page Redesign (P1 - Service Presentation)
+  epic-3: backlog
+  3-1-create-herorotating-component: backlog
+  3-2-create-servicecard-component: backlog
+  3-3-create-pricing-grid-section: backlog
+  3-4-build-expertise-page-layout: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Mobile Page (P1 - Service Deep Dive)
+  epic-4: backlog
+  4-1-create-mobile-page-hero-section: backlog
+  4-2-create-flutter-technology-section: backlog
+  4-3-create-oroneo-project-reference-section: backlog
+  4-4-add-mobile-page-contact-cta: backlog
+  epic-4-retrospective: optional
+
+  # Epic 5: Projects Page (P1 - Social Proof)
+  epic-5: backlog
+  5-1-create-projectcard-component: backlog
+  5-2-create-projects-page-with-oroneo: backlog
+  5-3-add-bas-project-to-projects-page: backlog
+  5-4-add-projects-page-contact-cta: backlog
+  epic-5-retrospective: optional
+
+  # Epic 6: AI Page (P1 - Differentiation)
+  epic-6: backlog
+  6-1-create-ai-page-accessible-hero: backlog
+  6-2-create-ai-use-cases-section: backlog
+  6-3-add-ai-page-contact-cta: backlog
+  epic-6-retrospective: optional
+
+  # Epic 7: Navigation & SEO (P2 - Discoverability)
+  epic-7: backlog
+  7-1-update-header-navigation-menu: backlog
+  7-2-add-page-seo-metadata: backlog
+  7-3-create-sitemap-and-robots-txt: backlog
+  7-4-responsive-design-verification: backlog
+  epic-7-retrospective: optional

@@ -6,8 +6,11 @@ import BentoGrid from '@/components/ui/BentoGrid';
 import BentoCard from '@/components/ui/BentoCard';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
+import { useContactModal } from '@/contexts/ContactModalContext';
 
 export default function ExpertisePage() {
+  const { openModal } = useContactModal();
+
   return (
     <main className="min-h-screen">
       <BentoGrid className="bento-expertise">
@@ -240,7 +243,7 @@ export default function ExpertisePage() {
             <p className="text-sm text-black">Un site ? Une app ? De l&apos;IA ? On en parle.</p>
           </div>
           <div className="flex gap-3">
-            <Button href="/contact" icon="mail">Me contacter</Button>
+            <Button onClick={openModal} icon="mail">Me contacter</Button>
             <Button variant="icon" icon="call" href="tel:+33625542475" />
           </div>
         </BentoCard>
