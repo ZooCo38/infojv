@@ -43,9 +43,16 @@
 
 html, body {
   height: 100%;
-  overflow: hidden;
 }
 
+/* Desktop large: pas de scroll, layout 16/9 centré */
+@media (min-width: 1025px) {
+  html, body {
+    overflow: hidden;
+  }
+}
+
+/* Tablette et mobile: scroll autorisé */
 @media (max-width: 1024px) {
   html, body {
     overflow-y: auto;
@@ -70,9 +77,21 @@ body {
     grid-template-rows: repeat(4, 1fr);
     gap: 16px;
     padding: 16px;
-    max-width: 1400px;
+    max-width: 1440px;
     height: 100vh;
     margin: 0 auto;
+  }
+
+  /* Très grands écrans (>1440px): respecter ratio 16/9 */
+  @media (min-width: 1441px) {
+    .bento-grid {
+      /* Ratio 16/9: height = width / 1.777 */
+      /* Pour 1440px de large: ~810px de haut */
+      max-height: calc(100vw / 1.777);
+      height: min(100vh, calc(1440px / 1.777 + 32px));
+      /* Centrer verticalement sur les écrans très hauts */
+      margin-top: max(0px, calc((100vh - min(100vh, calc(1440px / 1.777 + 32px))) / 2));
+    }
   }
 
   @media (max-width: 1024px) {
@@ -80,7 +99,7 @@ body {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
       height: auto;
-      min-height: 100vh;
+      min-height: auto;
     }
   }
 
@@ -89,7 +108,7 @@ body {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
       height: auto;
-      min-height: 100vh;
+      min-height: auto;
       gap: 12px;
       padding: 12px;
     }

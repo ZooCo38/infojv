@@ -1,15 +1,19 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import BentoGrid from '@/components/ui/BentoGrid';
 import BentoCard from '@/components/ui/BentoCard';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
 import FloatingShape from '@/components/ui/FloatingShape';
+import { useContactModal } from '@/contexts/ContactModalContext';
 
 export default function Home() {
+  const { openModal } = useContactModal();
+
   return (
-    <main className="h-screen overflow-hidden">
+    <main className="min-h-screen lg:h-screen lg:overflow-hidden">
       <BentoGrid className="bento-home">
         {/* Card 1: Info JV - Logo + Navigation */}
         <BentoCard gridArea="infojv" className="flex flex-col">
@@ -25,30 +29,33 @@ export default function Home() {
             </p>
           </div>
           <nav className="space-y-3 mt-auto">
-            <a href="#accueil" className="flex items-center gap-3 text-sm font-medium text-white bg-black px-3 py-2 hover:bg-accent hover:text-black transition-colors" style={{ borderRadius: '8px' }}>
+            <Link href="/" className="flex items-center gap-3 text-sm font-medium text-white bg-black px-3 py-2 hover:bg-accent hover:text-black transition-colors" style={{ borderRadius: '8px' }}>
               <Icon name="home" className="text-lg" />
               Accueil
-            </a>
-            <a href="#expertise" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+            </Link>
+            <Link href="/expertise" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
               <Icon name="workspace_premium" className="text-lg" />
               Expertise
-            </a>
-            <a href="#mobile" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+            </Link>
+            <Link href="/mobile" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
               <Icon name="smartphone" className="text-lg" />
               Mobile
-            </a>
-            <a href="#projets" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+            </Link>
+            <Link href="/projets" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
               <Icon name="rocket_launch" className="text-lg" />
               Projets
-            </a>
-            <a href="#ia" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+            </Link>
+            <Link href="/ia" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
               <Icon name="auto_awesome" className="text-lg" />
               IA
-            </a>
-            <a href="#contact" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
+            </Link>
+            <button
+              onClick={openModal}
+              className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors w-full text-left"
+            >
               <Icon name="mail" className="text-lg" />
               Contact
-            </a>
+            </button>
           </nav>
         </BentoCard>
 
@@ -131,14 +138,14 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center justify-center w-fit mx-auto">
-            <Button icon="chevron_right">découvrir</Button>
+            <Button icon="chevron_right" href="/expertise">découvrir</Button>
           </div>
         </BentoCard>
 
         {/* Card 5: Photo Julien */}
         <BentoCard gridArea="julien" variant="mint" className="relative overflow-visible p-0">
-          {/* Photo de Julien - débordant en haut jusqu'au milieu des cards projets/années */}
-          <div className="absolute inset-0 flex items-end z-10 hidden md:flex" style={{ top: '-50%', left: '-20px' }}>
+          {/* Photo de Julien - débordant en haut, centré horizontalement */}
+          <div className="absolute inset-0 flex items-end justify-center z-10 hidden md:flex" style={{ top: '-50%' }}>
             <Image
               src="/assets/Julien-Villard.png"
               alt="Julien Villard"
@@ -149,7 +156,7 @@ export default function Home() {
               quality={100}
             />
           </div>
-          {/* Version mobile - portrait normal */}
+          {/* Version mobile - portrait centré */}
           <div className="flex md:hidden items-end justify-center h-full">
             <Image
               src="/assets/Julien-Villard.png"
@@ -201,10 +208,10 @@ export default function Home() {
               <p className="leading-relaxed mb-4" style={{ fontSize: '1.3rem' }}>
                 Pour vous, je <span className="font-semibold">développe</span> l&apos;application de vos rêves...
               </p>
-              <button className="flex items-center gap-2 bg-black text-white px-4 py-2 font-semibold text-sm hover:bg-accent hover:text-black transition-colors self-start" style={{ borderRadius: '8px' }}>
+              <Link href="/mobile" className="flex items-center gap-2 bg-black text-white px-4 py-2 font-semibold text-sm hover:bg-accent hover:text-black transition-colors self-start" style={{ borderRadius: '8px' }}>
                 <Icon name="chevron_right" className="text-base" />
                 découvrir
-              </button>
+              </Link>
             </div>
           </div>
         </BentoCard>
@@ -269,18 +276,30 @@ export default function Home() {
             <p className="text-sm text-black">discutons de vos besoins.</p>
           </div>
           <div className="flex gap-4">
-            <Button variant="icon" icon="mail" />
-            <Button variant="icon" icon="call" />
-            <button className="btn-icon">
+            <Button variant="icon" icon="mail" onClick={openModal} />
+            <Button variant="icon" icon="call" href="tel:+33625542475" />
+            <a
+              href="https://linkedin.com/in/julien-villard"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-icon"
+              aria-label="LinkedIn"
+            >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
-            </button>
-            <button className="btn-icon">
+            </a>
+            <a
+              href="https://twitter.com/infojv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-icon"
+              aria-label="X (Twitter)"
+            >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
-            </button>
+            </a>
           </div>
         </BentoCard>
       </BentoGrid>
