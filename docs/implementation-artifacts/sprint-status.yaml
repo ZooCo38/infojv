@@ -60,27 +60,28 @@ development_status:
   epic-2-retrospective: optional
 
   # Epic 3: Expertise Page Redesign (P1 - Service Presentation)
-  epic-3: backlog
-  3-1-create-herorotating-component: backlog
-  3-2-create-servicecard-component: backlog
-  3-3-create-pricing-grid-section: backlog
-  3-4-build-expertise-page-layout: backlog
+  epic-3: done
+  3-1-create-herorotating-component: done
+  3-2-create-servicecard-component: done
+  3-3-create-pricing-grid-section: done
+  3-4-build-expertise-page-layout: done
   epic-3-retrospective: optional
 
   # Epic 4: Mobile Page (P1 - Service Deep Dive)
-  epic-4: backlog
-  4-1-create-mobile-page-hero-section: backlog
-  4-2-create-flutter-technology-section: backlog
-  4-3-create-oroneo-project-reference-section: backlog
-  4-4-add-mobile-page-contact-cta: backlog
+  epic-4: done
+  4-1-create-mobile-page-hero-section: done
+  4-2-create-flutter-technology-section: done
+  4-3-create-oroneo-project-reference-section: done
+  4-4-add-mobile-page-contact-cta: done
   epic-4-retrospective: optional
 
   # Epic 5: Projects Page (P1 - Social Proof)
-  epic-5: backlog
-  5-1-create-projectcard-component: backlog
-  5-2-create-projects-page-with-oroneo: backlog
-  5-3-add-bas-project-to-projects-page: backlog
-  5-4-add-projects-page-contact-cta: backlog
+  # NOTE: Page structure done, content (textes Oroneo/BAS) à revoir
+  epic-5: done
+  5-1-create-projectcard-component: done
+  5-2-create-projects-page-with-oroneo: done
+  5-3-add-bas-project-to-projects-page: done
+  5-4-add-projects-page-contact-cta: done
   epic-5-retrospective: optional
 
   # Epic 6: AI Page (P1 - Differentiation)

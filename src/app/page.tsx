@@ -7,6 +7,7 @@ import BentoCard from '@/components/ui/BentoCard';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
 import FloatingShape from '@/components/ui/FloatingShape';
+import NavCard from '@/components/ui/NavCard';
 import { useContactModal } from '@/contexts/ContactModalContext';
 
 export default function Home() {
@@ -16,48 +17,7 @@ export default function Home() {
     <main className="min-h-screen lg:h-screen lg:overflow-hidden">
       <BentoGrid className="bento-home">
         {/* Card 1: Info JV - Logo + Navigation */}
-        <BentoCard gridArea="infojv" className="flex flex-col">
-          <div className="mb-4">
-            <h1 className="text-4xl font-black italic mb-4">
-              <span className="text-black">INFO</span>
-              <span className="text-accent">JV</span>
-            </h1>
-            <p className="text-2xl font-extrabold leading-tight">
-              Expert digital<br />
-              <span className="title-accent">pour votre</span><br />
-              Business
-            </p>
-          </div>
-          <nav className="space-y-3 mt-auto">
-            <Link href="/" className="flex items-center gap-3 text-sm font-medium text-white bg-black px-3 py-2 hover:bg-accent hover:text-black transition-colors" style={{ borderRadius: '8px' }}>
-              <Icon name="home" className="text-lg" />
-              Accueil
-            </Link>
-            <Link href="/expertise" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
-              <Icon name="workspace_premium" className="text-lg" />
-              Expertise
-            </Link>
-            <Link href="/mobile" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
-              <Icon name="smartphone" className="text-lg" />
-              Mobile
-            </Link>
-            <Link href="/projets" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
-              <Icon name="rocket_launch" className="text-lg" />
-              Projets
-            </Link>
-            <Link href="/ia" className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors">
-              <Icon name="auto_awesome" className="text-lg" />
-              IA
-            </Link>
-            <button
-              onClick={openModal}
-              className="flex items-center gap-3 text-sm font-medium hover:text-accent transition-colors w-full text-left"
-            >
-              <Icon name="mail" className="text-lg" />
-              Contact
-            </button>
-          </nav>
-        </BentoCard>
+        <NavCard gridArea="infojv" />
 
         {/* Card 2: 50+ Projets */}
         <BentoCard gridArea="projets" className="relative">
