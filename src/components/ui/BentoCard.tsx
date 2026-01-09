@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -38,6 +38,16 @@ export default function BentoCard({
   colSpan,
   rowSpan,
 }: BentoCardProps) {
+  const [isHoverEnabled, setIsHoverEnabled] = useState(false);
+
+  // Délai pour activer le hover après le chargement initial
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsHoverEnabled(true);
+    }, 800); // 800ms pour laisser les animations d'entrée se terminer
+    return () => clearTimeout(timer);
+  }, []);
+
   const variantClasses = {
     default: 'bento-card',
     white: 'bento-card bento-card--white',
@@ -54,7 +64,7 @@ export default function BentoCard({
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ y: -4, transition: { duration: 0.2 } }}
+      whileHover={isHoverEnabled ? { y: -4, transition: { duration: 0.2 } } : undefined}
       className={cn(variantClasses[variant], className)}
       style={gridStyles}
     >
