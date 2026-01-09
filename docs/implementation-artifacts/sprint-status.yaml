@@ -85,16 +85,16 @@ development_status:
   epic-5-retrospective: optional
 
   # Epic 6: AI Page (P1 - Differentiation)
-  epic-6: backlog
-  6-1-create-ai-page-accessible-hero: backlog
-  6-2-create-ai-use-cases-section: backlog
-  6-3-add-ai-page-contact-cta: backlog
+  epic-6: done
+  6-1-create-ai-page-accessible-hero: done
+  6-2-create-ai-use-cases-section: done
+  6-3-add-ai-page-contact-cta: done
   epic-6-retrospective: optional
 
   # Epic 7: Navigation & SEO (P2 - Discoverability)
-  epic-7: backlog
-  7-1-update-header-navigation-menu: backlog
-  7-2-add-page-seo-metadata: backlog
-  7-3-create-sitemap-and-robots-txt: backlog
-  7-4-responsive-design-verification: backlog
+  epic-7: done
+  7-1-update-header-navigation-menu: done
+  7-2-add-page-seo-metadata: done
+  7-3-create-sitemap-and-robots-txt: done
+  7-4-responsive-design-verification: done
   epic-7-retrospective: optional
