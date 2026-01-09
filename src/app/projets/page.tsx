@@ -6,7 +6,7 @@ import BentoCard from '@/components/ui/BentoCard';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
 import NavCard from '@/components/ui/NavCard';
-import Badge from '@/components/ui/Badge';
+import FloatingShape from '@/components/ui/FloatingShape';
 import { useContactModal } from '@/contexts/ContactModalContext';
 
 export default function ProjetsPage() {
@@ -19,85 +19,154 @@ export default function ProjetsPage() {
         <NavCard gridArea="nav" />
 
         {/* HERO - cols 2-4, row 1 */}
-        <BentoCard gridArea="hero" variant="mint" className="flex flex-col justify-center">
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-black leading-tight">
-            Mes réalisations,<br />
-            <span className="text-accent">vos inspirations</span>
-          </h1>
-          <p className="text-base text-gray-700 max-w-md">
-            Découvrez des projets concrets qui illustrent mon expertise en développement mobile, IA et automatisation.
-          </p>
-        </BentoCard>
-
-        {/* ORONEO - cols 2-3, rows 2-3 */}
-        <BentoCard gridArea="oroneo" className="flex flex-col p-0 overflow-hidden">
-          {/* Image */}
-          <div className="relative h-40 bg-gradient-to-br from-[#C9F9E3] to-[#53E1A1] flex items-center justify-center">
-            <Image
-              src="/assets/mobile.png"
-              alt="Application Oroneo"
-              width={120}
-              height={200}
-              className="object-contain h-full w-auto"
-            />
-          </div>
-          {/* Content */}
-          <div className="p-6 flex flex-col flex-1">
-            <Badge variant="dark" className="self-start mb-3">Mobile + IA</Badge>
-            <h3 className="text-xl font-bold text-black mb-2">Oroneo</h3>
-            <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-              Application mobile de simulation retraite intégrant une IA conversationnelle pour accompagner les utilisateurs dans leurs projections financières.
+        <BentoCard gridArea="hero" variant="mint" className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-black leading-tight">
+              Vos projets digitaux,<br />
+              <span className="text-accent">sur mesure</span>
+            </h1>
+            <p className="text-base text-gray-700 max-w-md">
+              Des solutions adaptées à vos besoins spécifiques, pas des logiciels génériques.
             </p>
-            <div className="mt-auto">
-              <div className="flex items-start gap-2 mb-3">
-                <Icon name="check_circle" className="text-accent text-lg mt-0.5" />
-                <p className="text-sm font-medium text-black">+500 simulations réalisées</p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-xs px-2 py-1 rounded-full bg-black/5 text-gray-600">Flutter</span>
-                <span className="text-xs px-2 py-1 rounded-full bg-black/5 text-gray-600">OpenAI</span>
-                <span className="text-xs px-2 py-1 rounded-full bg-black/5 text-gray-600">Firebase</span>
-              </div>
+          </div>
+          <FloatingShape
+            src="/assets/shape_3D/RoundCube-Black-Matte.png"
+            className="w-32 h-32 hidden md:block"
+            duration={4.5}
+          />
+        </BentoCard>
+
+        {/* AUTOMATISATION - cols 2-4, rows 2-3 : Cas pratiques (3x2) */}
+        <BentoCard gridArea="besoins" className="flex flex-col">
+          <h2 className="mb-6">
+            <span className="text-3xl md:text-4xl font-black text-black leading-tight">
+              Un besoin <span className="text-accent italic">spécifique</span> ?
+            </span>
+          </h2>
+          {/* Layout 2 colonnes : Shape gauche, Texte droite */}
+          <div className="flex gap-8 flex-1">
+            {/* Colonne gauche - Shape 3D */}
+            <div className="hidden md:flex items-center justify-center w-72">
+              <FloatingShape
+                src="/assets/shape_3D/SuperToroid-Black-Matte.png"
+                className="w-64 h-64"
+                duration={5}
+              />
+            </div>
+            {/* Colonne droite - Texte + Liste */}
+            <div className="flex-1">
+              <p className="text-base text-gray-600 mb-4">
+                Pas de logiciel sur le marché ? Vous êtes différent, j'adapte et intègre toutes les solutions.
+              </p>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <Icon name="check_circle" className="text-accent text-lg mt-0.5 flex-shrink-0" />
+                  <span><strong>Emails intelligents</strong> — Tri, réponses et relances par IA</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="check_circle" className="text-accent text-lg mt-0.5 flex-shrink-0" />
+                  <span><strong>Synchronisation</strong> — Vos données à jour partout</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="check_circle" className="text-accent text-lg mt-0.5 flex-shrink-0" />
+                  <span><strong>Scraping web</strong> — Récupération de données en ligne</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="check_circle" className="text-accent text-lg mt-0.5 flex-shrink-0" />
+                  <span><strong>Conversion fichiers</strong> — Traitement en masse</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="check_circle" className="text-accent text-lg mt-0.5 flex-shrink-0" />
+                  <span><strong>Réseaux sociaux</strong> — Publication automatisée</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="check_circle" className="text-accent text-lg mt-0.5 flex-shrink-0" />
+                  <span><strong>ChatGPT sur mesure</strong> — Agents IA métier</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {/* CTA centré */}
+          <button
+            onClick={openModal}
+            className="mt-6 mx-auto bg-accent text-black px-6 py-3 rounded-xl font-semibold text-sm hover:bg-accent/80 transition-colors"
+          >
+            Parlons de votre besoin
+          </button>
+        </BentoCard>
+
+        {/* LOGOS - col 1, row 3 : Outils automatisation */}
+        <BentoCard gridArea="logos" variant="dark" className="flex flex-col items-center justify-center tools-card">
+          <p className="text-lg font-extrabold italic text-white mb-4">Outils maîtrisés</p>
+          <div className="flex gap-3 items-center flex-wrap justify-center">
+            {/* Zapier */}
+            <div className="tool-logo group relative" data-tooltip="Zapier">
+              <Image
+                src="/assets/logos-outils/zapier.svg"
+                alt="Zapier"
+                width={28}
+                height={28}
+                className="w-7 h-7 object-contain grayscale brightness-50"
+              />
+            </div>
+            {/* Make */}
+            <div className="tool-logo group relative" data-tooltip="Make">
+              <Image
+                src="/assets/logos-outils/make.svg"
+                alt="Make"
+                width={28}
+                height={28}
+                className="w-7 h-7 object-contain grayscale brightness-50"
+              />
+            </div>
+            {/* N8N */}
+            <div className="tool-logo group relative" data-tooltip="N8N">
+              <Image
+                src="/assets/logos-outils/n8n.svg"
+                alt="N8N"
+                width={28}
+                height={28}
+                className="w-7 h-7 object-contain grayscale brightness-50"
+              />
+            </div>
+            {/* BAS - Logo CSS */}
+            <div className="tool-logo group relative" data-tooltip="Browser Automation">
+              <span className="text-gray-700 font-black text-lg">B</span>
             </div>
           </div>
         </BentoCard>
 
-        {/* BAS - col 4, rows 2-3 */}
-        <BentoCard gridArea="bas" variant="dark" className="flex flex-col stats-card">
-          <Badge variant="accent" className="self-start mb-3">Automatisation</Badge>
-          <h3 className="text-xl font-bold text-white mb-2">BAS</h3>
-          <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-            Système d'automatisation des processus métier pour une grande banque. Traitement automatisé des documents et workflows internes.
-          </p>
-          <div className="mt-auto">
-            <div className="flex items-start gap-2 mb-3">
-              <Icon name="check_circle" className="text-accent text-lg mt-0.5" />
-              <p className="text-sm font-medium text-white">-70% de temps de traitement</p>
+        {/* TIMELINE - cols 1-2, row 4 */}
+        <BentoCard gridArea="timeline" className="flex flex-col justify-center">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="text-2xl font-extrabold mb-1">
+                Mon approche
+              </h2>
+              <p className="text-sm text-gray-600">
+                Simple, efficace, transparent
+              </p>
             </div>
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-300">Python</span>
-              <span className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-300">RPA</span>
-              <span className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-300">API</span>
-            </div>
+          </div>
+          {/* Timeline */}
+          <div className="flex items-center justify-between pt-3 border-t border-gray-200">
+            <span className="text-sm font-extrabold">Besoin</span>
+            <Icon name="arrow_forward" className="text-accent text-xl" />
+            <span className="text-sm font-extrabold">Définition</span>
+            <Icon name="arrow_forward" className="text-accent text-xl" />
+            <span className="text-sm font-extrabold">Dev</span>
+            <Icon name="arrow_forward" className="text-accent text-xl" />
+            <span className="text-sm font-extrabold">Livraison</span>
           </div>
         </BentoCard>
 
-        {/* STATS - col 1, row 3 */}
-        <BentoCard gridArea="stats" variant="dark" className="flex flex-col items-center justify-center text-center stats-card">
-          <p className="text-4xl font-extrabold text-accent mb-1">50+</p>
-          <p className="text-sm text-white leading-tight">
-            projets<br />
-            livrés
-          </p>
-        </BentoCard>
-
-        {/* CTA (Contact) - cols 1-4, row 4 */}
+        {/* CTA (Contact) - cols 3-4, row 4 */}
         <BentoCard gridArea="cta" className="flex items-center justify-between !bg-[#C9F9E3]">
           <div>
             <h2 className="text-3xl font-extrabold mb-2 text-black">
-              Un projet<br />similaire ?
+              Un projet<br />en tête ?
             </h2>
-            <p className="text-sm text-black">Parlons de votre besoin.</p>
+            <p className="text-sm text-black">Discutons de vos besoins.</p>
           </div>
           <div className="flex gap-4">
             <Button variant="icon" icon="mail" onClick={openModal} />
@@ -130,16 +199,75 @@ export default function ProjetsPage() {
 
       <style jsx global>{`
         .bento-projets {
-          grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: auto 1fr 1fr auto;
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          grid-template-rows: auto 1fr 1fr auto !important;
           grid-template-areas:
             "nav      hero     hero     hero"
-            "nav      oroneo   oroneo   bas"
-            "stats    oroneo   oroneo   bas"
-            "cta      cta      cta      cta";
+            "nav      besoins  besoins  besoins"
+            "logos    besoins  besoins  besoins"
+            "timeline timeline cta      cta" !important;
           height: 100vh;
           max-width: 1440px;
           margin: 0 auto;
+        }
+
+        /* Badge titre sur 2 lignes */
+        .title-badge {
+          font-size: 1.25rem;
+          line-height: 1.3;
+          background-color: #000000;
+          border-radius: 8px;
+          padding: 4px 10px;
+          box-decoration-break: clone;
+          -webkit-box-decoration-break: clone;
+        }
+
+        /* Carte outils - Shadow mint */
+        .tools-card {
+          box-shadow: 0 8px 32px rgba(83, 225, 161, 0.3);
+        }
+
+        /* Logo outils avec tooltip */
+        .tool-logo {
+          width: 48px;
+          height: 48px;
+          background-color: white;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.2s, box-shadow 0.2s;
+          cursor: pointer;
+        }
+
+        .tool-logo:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 20px rgba(83, 225, 161, 0.4);
+        }
+
+        /* Tooltip mint */
+        .tool-logo::after {
+          content: attr(data-tooltip);
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-8px);
+          background-color: #53E1A1;
+          color: #000;
+          padding: 4px 10px;
+          border-radius: 6px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          white-space: nowrap;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.2s, visibility 0.2s;
+        }
+
+        .tool-logo:hover::after {
+          opacity: 1;
+          visibility: visible;
         }
 
         @media (max-width: 1024px) {
@@ -151,9 +279,9 @@ export default function ProjetsPage() {
             grid-template-areas:
               "nav       nav"
               "hero      hero"
-              "stats     stats"
-              "oroneo    oroneo"
-              "bas       bas"
+              "besoins   besoins"
+              "logos     logos"
+              "timeline  timeline"
               "cta       cta";
           }
         }
@@ -166,9 +294,9 @@ export default function ProjetsPage() {
             grid-template-areas:
               "nav"
               "hero"
-              "stats"
-              "oroneo"
-              "bas"
+              "besoins"
+              "logos"
+              "timeline"
               "cta";
           }
         }
